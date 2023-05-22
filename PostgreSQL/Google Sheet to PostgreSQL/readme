@@ -1,0 +1,10 @@
+Make sure to replace the following personal information:
+
+'path/to/key.json' is replaced with the correct path to the Google Sheet credential JSON file.
+'your_postgresql_host' is replaced with your PostgreSQL host.
+'your_postgresql_database' is replaced with the name of the PostgreSQL database you want to use.
+'your_postgresql_user' is replaced with the corresponding PostgreSQL username.
+'your_postgresql_password' is replaced with the corresponding PostgreSQL user password.
+'https://docs.google.com/spreadsheets/d/your_sheet_id/edit?usp=sharing' is replaced with your Google Sheet URL.
+'Your_Worksheet_Name' is replaced with the name of the Google Sheet worksheet you want to use.
+'your_table_name' is replaced with the name of the PostgreSQL table you want to use.
