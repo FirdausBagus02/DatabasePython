@@ -3,6 +3,7 @@ import csv
 import os
 from datetime import datetime, timedelta
 
+#Postgresql Database Connection
 conn = psycopg2.connect(
     host="your-hostname",
     database="your-database",
@@ -10,7 +11,7 @@ conn = psycopg2.connect(
     password="your-password"
 )
 
-days_to_keep = 210
+days_to_keep = 0 #the desired time to save the csv file from the last date 
 time_delta = datetime.now() - timedelta(days=days_to_keep)
 
 cur = conn.cursor()
@@ -33,6 +34,7 @@ for row in results:
         csvwriter.writerow(row)
 
 conn.commit()
+#Delete data that does not belong to the time range 
 delete_query = "DELETE FROM your_table WHERE date_trunc('day', timestamp) < %s"
 cur.execute(delete_query, (time_delta.date(),))
 conn.commit()
